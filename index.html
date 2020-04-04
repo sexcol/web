@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+    <title>神马TV3</title>
+</head>
+<body>
+<center>正在为您跳转<< 神马TV - 三级影院>>页面，请稍候。。。</center>
+<script>
+
+    var arr = new Array(
+        "https://smtv3.cc/",
+    );
+
+    window.location.href = arr[Math.floor(Math.random() * arr.length)];
+</script>
+</body>
+</html>
+
+
+//封装方法
+    /** 
+     * 获取不重复随机数 
+     * @param integer start 随机数最小值 
+     * @param integer end 随机数最大值 
+     * @param integer size 随机数获取数量 最小为1，默认1 
+     * @return integer|array 如 1或者[2,4,7,9] 
+     */  
+    function randUnique(start, end, size){  
+        // 全部随机数值  
+        var allNums = new Array;  
+
+        // 判断获取随机数个数  
+        size = size ? (size > end - start ? end - start : size) : 1;  
+
+        // 生成随机数值区间数组  
+        for (var i = start, k = 0; i <= end; i++, k++) {  
+        allNums[k] = i;  
+        }  
+
+        // 打撒数组排序  
+        allNums.sort(function(){ return 0.5 - Math.random(); });  
+
+        // 获取数组从第一个开始到指定个数的下标区间  
+        return allNums.slice(0, size);  
+    } 
